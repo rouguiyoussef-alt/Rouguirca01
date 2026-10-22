@@ -31,6 +31,21 @@
         "BROWSERBASE_PROJECT_ID": "${BROWSERBASE_PROJECT_ID}",
         "GEMINI_API_KEY": "${GEMINI_API_KEY}"
       }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.83",
+        "--headless",
+        "--isolated",
+        "--no-sandbox",
+        "--allow-unrestricted-file-access",
+        "--executable-path",
+        "/opt/pw-browsers/chromium",
+        "--output-dir",
+        "/tmp/playwright-mcp"
+      ]
     }
   }
 }
