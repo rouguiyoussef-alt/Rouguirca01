@@ -2,10 +2,23 @@
   "mcpServers": {
     "scrapegraph": {
       "command": "uvx",
-      "args": ["--from", "scrapegraph-mcp==1.0.1", "scrapegraph-mcp"],
+      "args": [
+        "--from",
+        "scrapegraph-mcp==1.0.1",
+        "scrapegraph-mcp"
+      ],
       "env": {
         "SGAI_API_KEY": "${SGAI_API_KEY}"
       }
+    },
+    "scrapling": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "scrapling[ai]==0.5",
+        "scrapling",
+        "mcp"
+      ]
     }
   }
 }
