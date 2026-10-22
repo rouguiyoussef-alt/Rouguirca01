@@ -1,0 +1,51 @@
+{
+  "mcpServers": {
+    "scrapegraph": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "scrapegraph-mcp==1.0.1",
+        "scrapegraph-mcp"
+      ],
+      "env": {
+        "SGAI_API_KEY": "${SGAI_API_KEY}"
+      }
+    },
+    "scrapling": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "scrapling[ai]==0.5",
+        "scrapling",
+        "mcp"
+      ]
+    },
+    "browserbase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@browserbasehq/mcp@3.0.0"
+      ],
+      "env": {
+        "BROWSERBASE_API_KEY": "${BROWSERBASE_API_KEY}",
+        "BROWSERBASE_PROJECT_ID": "${BROWSERBASE_PROJECT_ID}",
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@playwright/mcp@0.0.83",
+        "--headless",
+        "--isolated",
+        "--no-sandbox",
+        "--allow-unrestricted-file-access",
+        "--executable-path",
+        "/opt/pw-browsers/chromium",
+        "--output-dir",
+        "/tmp/playwright-mcp"
+      ]
+    }
+  }
+}
